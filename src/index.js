@@ -5,7 +5,7 @@ import AppRouter from './Components/AppRouter/AppRouter';
 // import registerServiceWorker from './registerServiceWorker';
 
 
-ReactDOM.render((
+ReactDOM.hydrate((
   <BrowserRouter>
     <AppRouter />
   </BrowserRouter>

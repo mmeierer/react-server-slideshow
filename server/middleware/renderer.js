@@ -16,7 +16,7 @@ export default (req, res, next) => {
         // render the app as a string
         const context = {};
         const html = ReactDOMServer.renderToString(
-          <StaticRouter location={req.url} context={context}>
+          <StaticRouter location={'/1'} context={context}>
             <AppRouter />
           </StaticRouter>
         );
@@ -25,8 +25,6 @@ export default (req, res, next) => {
             '<div id="root"></div>',
             `<div id="root">${html}</div>`
         )
-        return res.send(
-            htmlData
-        );
+        return res.status(200).send(htmlData);
     });
 }

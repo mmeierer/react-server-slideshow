@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './boot_short.css';
 // carousels
 import Carousel from '../Carousel/Carousel';
 import Thumbnails from '../Thumbnails/Thumbnails';
