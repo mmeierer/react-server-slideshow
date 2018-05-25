@@ -17,6 +17,7 @@ export default class Chapters extends Component {
                   isCurrent={isCurrent}
                   showGallery={this.props.showGallery}
                   unit = {unit}
+                  linkTo = {index}
                   key = {index}/>
               })
             }

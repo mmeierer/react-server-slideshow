@@ -4,6 +4,7 @@
     padding-right:10px;
     max-height:350px;
 }
+
 .chapters::-webkit-scrollbar {
     width: 5px;
     height: 8px;
@@ -33,6 +34,7 @@ ol.controls > li::before {
 }
 a.chapter {
     direction: ltr;
+    text-decoration: none !important;
 }
 #chapterWrapper{
     padding-bottom:20px;

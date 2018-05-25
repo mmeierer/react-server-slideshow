@@ -44,7 +44,7 @@ let dataMain = {
           return a.match(/\d+/)[0] - b.match(/\d+/)[0];
         });
         dataMain.units[i].slidesPaths = slides.map(slide => {
-            return dataMain.units[i].unitPath.split("/").slice(2).join("/") + slide;
+            return dataMain.units[i].unitPath + slide;
         });
         // collect data from details.json
         let data = dataFromJson(`${Root}/${dataMain.units[i].unitPath}details.json`);
@@ -91,7 +91,7 @@ let dataMain = {
     //     if (err) throw err;
     //     console.log("It's saved!");
     // });
-    fs.writeFileSync(DB, JSON.stringify(dataMain, null, 4), { flag: 'wx' });
+    fs.writeFileSync(DB, JSON.stringify(dataMain, null, 4), { flag: 'w' });
 
 })();
 // HELPER FUNCTIONS
@@ -101,3 +101,4 @@ function dataFromJson(path){
         if (err) { throw err };
         }).toString())
 }
+console.log('FILE MAPPING: Succesfuly completed');

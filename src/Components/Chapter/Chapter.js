@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Chapter extends Component {
   constructor(props){
@@ -41,9 +42,9 @@ export default class Chapter extends Component {
   render () {
     return (
       <div>
-        <a className="chapter" href="#chapter2" id="chapter-link">
+        <Link to={`/${this.props.linkTo}`} className="chapter" id="chapter-link">
           <h3 style={{display: 'inline'}}>{this.props.unit.title}</h3>
-        </a>
+        </Link>
         {this.showGalleryButton()}
         {this.showSubchapters()}
       </div>

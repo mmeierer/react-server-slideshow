@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 // carousels
 import Carousel from '../Carousel/Carousel';
@@ -71,9 +72,17 @@ class App extends Component {
   componentWillUnmount() {
    window.removeEventListener("resize", this.updateDimensions.bind(this));
   }
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   console.log(nextProps);
-  // }
+  static getDerivedStateFromProps(props, state) {
+    // Check if root
+    if(Object.keys(props.match.params).length === 0) return {currentChapter: 0}
+    // do nothing if input if > then length of data
+    const chapter = parseInt(props.match.params.chapter, 10)
+    if(chapter >= state.data.units.length) return state;
+    return {
+      currentChapter: chapter
+    }
+  }
+
   render() {
     const data = this.state.data['units'];
     return (
