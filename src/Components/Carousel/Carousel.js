@@ -35,7 +35,7 @@ export default class Carousel extends Component {
     this.props.showLightbox();
   }
   mapItems(){
-    const slides = this.props.data['slidesPaths'];
+    const slides = this.props.data[this.props.currentChapter]['slidesPaths'];
     return slides.map((slide, index) => {
       return (
         <div data-hash={`slide${index + 1}`} onDoubleClick={this.handleDoubleClick} key={index}>

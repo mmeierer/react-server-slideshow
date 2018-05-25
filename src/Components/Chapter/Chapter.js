@@ -31,7 +31,9 @@ export default class Chapter extends Component {
       <a className="toggle-gallery" onClick={this.clickHandler} style={{cursor: 'pointer'}}>
         <p  style={{marginTop: 7, marginBottom: 7, paddingRight: 15}}>
           Overview
-          <img height="13" src={require('./gallery.png')} style={{position: 'relative', marginRight: '3%', marginBottom: 5, paddingLeft: 10}}/>
+          <img height="13" src={require('./gallery.png')}
+            style={{position: 'relative', marginRight: '3%', marginBottom: 5, paddingLeft: 10}}
+            alt="gallery button"/>
         </p>
       </a>)
 

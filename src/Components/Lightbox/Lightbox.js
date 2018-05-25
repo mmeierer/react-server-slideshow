@@ -33,14 +33,18 @@ export default class Lightbox extends Component {
             <div className="col-lg-2"></div>
             <div className="col-lg-8">
               <Carousel
-            data = {this.props.data}/>
+              currentChapter={this.props.currentChapter}
+              data = {this.props.data}/>
             </div>
             <div className="col-lg-2"></div>
           </div>
         </div>
         {/* GALLERY */}
         <div className="gallery" style={this.isGallery()}>
-          <Gallery hideLightbox={this.props.hideLightbox}/>
+          <Gallery
+            hideLightbox={this.props.hideLightbox}
+            currentChapter={this.props.currentChapter}
+            data = {this.props.data} />
         </div>
 
     </div>

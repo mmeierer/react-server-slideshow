@@ -11,7 +11,7 @@ export default class Chapters extends Component {
           <ul>
             {/* Chapter */}
             {
-              this.props.data.units.map((unit, index) => {
+              this.props.data.map((unit, index) => {
                 const isCurrent = index===this.props.currentChapter;
                return <Chapter
                   isCurrent={isCurrent}

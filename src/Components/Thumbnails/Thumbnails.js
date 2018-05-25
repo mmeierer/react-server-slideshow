@@ -32,11 +32,11 @@ export default class Thumbnails extends Component {
     return {display: 'none'};
   }
   mapItems(){
-    const slides = this.props.data.slidesPaths;
+    const slides = this.props.data[this.props.currentChapter].slidesPaths;
     return slides.map((slide, index) => {
       return (
         <a href={`#slide${index + 1}`} key={index}>
-          <img className="thumb" src={slide} data-hash={`slide${index + 1}`} />
+          <img className="thumb" src={slide} data-hash={`slide${index + 1}`} alt={`slide${index + 1}`} />
         </a>
       )
     })

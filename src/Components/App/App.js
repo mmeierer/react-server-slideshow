@@ -76,15 +76,18 @@ class App extends Component {
   //   console.log(nextProps);
   // }
   render() {
-    const data = this.state.data['units'][this.state.currentChapter];
+    const data = this.state.data['units'];
     return (
 
       <div className="App">
+
         <Lightbox
           lightbox  = {this.state.lightbox}
           gallery   = {this.state.gallery}
           hideLightbox = {this.hideLightbox}
-          data = {data}/>
+          currentChapter={this.state.currentChapter}
+          data = {data} />
+
         <div className="row white" style={style.rowWhite}>
             { /* LEFT COLUMN */ }
             <div className="col-md-12">
@@ -110,7 +113,7 @@ class App extends Component {
                 <ChaptersList
                   showGallery={this.showGallery}
                   currentChapter={this.state.currentChapter}
-                  data = {this.state.data}/>
+                  data = {data}/>
 
               </div>
           </div>
@@ -125,6 +128,7 @@ class App extends Component {
                 </div>
                 <Carousel
                   showLightbox = {this.showLightbox}
+                  currentChapter={this.state.currentChapter}
                   data = {data}/>
 
           </div>
@@ -138,10 +142,15 @@ class App extends Component {
           <div className="col-md-3"></div>
           {/*CENTRAL COLUMN*/}
           <div className="col-md-6">
+
+
               {/*THUMBNAILS*/}
               <Thumbnails
                 thumbnails={this.state.thumbnails}
+                currentChapter={this.state.currentChapter}
                 data = {data}/>
+
+
           </div>
           {/*Right COLUMN*/}
           <div className="col-md-3"></div>
