@@ -2,7 +2,7 @@
     "units": [
         {
             "folder": "unit1",
-            "unitPath": "./source/PROJECT_CONTENT/unit1/",
+            "unitPath": "./source/unit1/",
             "slides": [
                 "Slide1.jpeg",
                 "Slide2.jpeg",
@@ -17,17 +17,17 @@
                 "Slide11.jpeg"
             ],
             "slidesPaths": [
-                "PROJECT_CONTENT/unit1/Slide1.jpeg",
-                "PROJECT_CONTENT/unit1/Slide2.jpeg",
-                "PROJECT_CONTENT/unit1/Slide3.jpeg",
-                "PROJECT_CONTENT/unit1/Slide4.jpeg",
-                "PROJECT_CONTENT/unit1/Slide5.jpeg",
-                "PROJECT_CONTENT/unit1/Slide6.jpeg",
-                "PROJECT_CONTENT/unit1/Slide7.jpeg",
-                "PROJECT_CONTENT/unit1/Slide8.jpeg",
-                "PROJECT_CONTENT/unit1/Slide9.jpeg",
-                "PROJECT_CONTENT/unit1/Slide10.jpeg",
-                "PROJECT_CONTENT/unit1/Slide11.jpeg"
+                "unit1/Slide1.jpeg",
+                "unit1/Slide2.jpeg",
+                "unit1/Slide3.jpeg",
+                "unit1/Slide4.jpeg",
+                "unit1/Slide5.jpeg",
+                "unit1/Slide6.jpeg",
+                "unit1/Slide7.jpeg",
+                "unit1/Slide8.jpeg",
+                "unit1/Slide9.jpeg",
+                "unit1/Slide10.jpeg",
+                "unit1/Slide11.jpeg"
             ],
             "index": "0",
             "title": "I am awesome",
@@ -43,28 +43,28 @@
             ],
             "subchaptersSlides": [
                 [
-                    "PROJECT_CONTENT/unit1/Slide1.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide2.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide3.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide4.jpeg"
+                    "unit1/Slide1.jpeg",
+                    "unit1/Slide2.jpeg",
+                    "unit1/Slide3.jpeg",
+                    "unit1/Slide4.jpeg"
                 ],
                 [
-                    "PROJECT_CONTENT/unit1/Slide5.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide6.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide7.jpeg"
+                    "unit1/Slide5.jpeg",
+                    "unit1/Slide6.jpeg",
+                    "unit1/Slide7.jpeg"
                 ],
                 [
-                    "PROJECT_CONTENT/unit1/Slide8.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide9.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide10.jpeg",
-                    "PROJECT_CONTENT/unit1/Slide11.jpeg"
+                    "unit1/Slide8.jpeg",
+                    "unit1/Slide9.jpeg",
+                    "unit1/Slide10.jpeg",
+                    "unit1/Slide11.jpeg"
                 ]
             ],
             "url": "./chapter0"
         },
         {
             "folder": "unit2",
-            "unitPath": "./source/PROJECT_CONTENT/unit2/",
+            "unitPath": "./source/unit2/",
             "slides": [
                 "Slide1.png",
                 "Slide2.png",
@@ -80,18 +80,18 @@
                 "Slide12.png"
             ],
             "slidesPaths": [
-                "PROJECT_CONTENT/unit2/Slide1.png",
-                "PROJECT_CONTENT/unit2/Slide2.png",
-                "PROJECT_CONTENT/unit2/Slide3.png",
-                "PROJECT_CONTENT/unit2/Slide4.png",
-                "PROJECT_CONTENT/unit2/Slide5.png",
-                "PROJECT_CONTENT/unit2/Slide6.png",
-                "PROJECT_CONTENT/unit2/Slide7.png",
-                "PROJECT_CONTENT/unit2/Slide8.png",
-                "PROJECT_CONTENT/unit2/Slide9.png",
-                "PROJECT_CONTENT/unit2/Slide10.png",
-                "PROJECT_CONTENT/unit2/Slide11.png",
-                "PROJECT_CONTENT/unit2/Slide12.png"
+                "unit2/Slide1.png",
+                "unit2/Slide2.png",
+                "unit2/Slide3.png",
+                "unit2/Slide4.png",
+                "unit2/Slide5.png",
+                "unit2/Slide6.png",
+                "unit2/Slide7.png",
+                "unit2/Slide8.png",
+                "unit2/Slide9.png",
+                "unit2/Slide10.png",
+                "unit2/Slide11.png",
+                "unit2/Slide12.png"
             ],
             "index": "1",
             "title": "I am incredibly good",
@@ -107,22 +107,22 @@
             ],
             "subchaptersSlides": [
                 [
-                    "PROJECT_CONTENT/unit2/Slide1.png",
-                    "PROJECT_CONTENT/unit2/Slide2.png",
-                    "PROJECT_CONTENT/unit2/Slide3.png",
-                    "PROJECT_CONTENT/unit2/Slide4.png"
+                    "unit2/Slide1.png",
+                    "unit2/Slide2.png",
+                    "unit2/Slide3.png",
+                    "unit2/Slide4.png"
                 ],
                 [
-                    "PROJECT_CONTENT/unit2/Slide5.png",
-                    "PROJECT_CONTENT/unit2/Slide6.png",
-                    "PROJECT_CONTENT/unit2/Slide7.png",
-                    "PROJECT_CONTENT/unit2/Slide8.png"
+                    "unit2/Slide5.png",
+                    "unit2/Slide6.png",
+                    "unit2/Slide7.png",
+                    "unit2/Slide8.png"
                 ],
                 [
-                    "PROJECT_CONTENT/unit2/Slide9.png",
-                    "PROJECT_CONTENT/unit2/Slide10.png",
-                    "PROJECT_CONTENT/unit2/Slide11.png",
-                    "PROJECT_CONTENT/unit2/Slide12.png"
+                    "unit2/Slide9.png",
+                    "unit2/Slide10.png",
+                    "unit2/Slide11.png",
+                    "unit2/Slide12.png"
                 ]
             ],
             "url": "./chapter1"
@@ -132,6 +132,6 @@
     "contributors": "your names",
     "description": "course description",
     "color": "#041199",
-    "projectFolder": "./source/PROJECT_CONTENT/",
-    "logo": "PROJECT_CONTENT/logo.png"
+    "projectFolder": "./source/",
+    "logo": "logo.png"
 }
