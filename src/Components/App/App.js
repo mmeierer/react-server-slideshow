@@ -6,7 +6,6 @@ import Thumbnails from '../Thumbnails/Thumbnails';
 import Lightbox from '../Lightbox/Lightbox';
 import ChaptersList from '../ChaptersList/ChaptersList';
 
-const STATIC = '../../../PROJECT_CONTENT/'
 const testData = require('./ProjectMap');
 
 const style = {
