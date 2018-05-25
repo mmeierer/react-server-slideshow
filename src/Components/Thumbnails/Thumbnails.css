@@ -1,0 +1,6 @@
+#thumbnails.owl-carousel .owl-item img{
+  opacity: 0.6;
+}
+#thumbnails.owl-carousel .owl-item.center img{
+  opacity: 1;
+}

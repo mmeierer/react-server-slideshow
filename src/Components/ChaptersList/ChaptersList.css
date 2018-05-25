@@ -1,0 +1,50 @@
+.chapters {
+    height: 21vw;
+    overflow: auto;
+    padding-right:10px;
+    max-height:350px;
+}
+.chapters::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #aaa; /* or add it to the track */
+    }
+.chapters::-webkit-scrollbar-thumb {
+    background: #000;
+    }
+.chapterBox {
+    height: 21vw;
+    overflow: hidden;
+    position: relative;
+    }
+
+ol.controls {
+    counter-reset: alpha;
+    padding: 1px;
+    padding-right:36px;
+    margin-bottom: 7px;
+}
+ol.controls li {
+    list-style: lower-alpha;
+    position: relative;
+}
+ol.controls > li::before {
+    counter-increment: alpha;
+}
+a.chapter {
+    direction: ltr;
+}
+#chapterWrapper{
+    padding-bottom:20px;
+    padding-left:20px;
+}
+@media (min-width: 0px) {
+  #chapterWrapper {
+    padding-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  #chapterWrapper {
+    padding-top: 60px;
+  }
+}
