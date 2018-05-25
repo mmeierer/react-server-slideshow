@@ -68,6 +68,12 @@ class App extends Component {
     if(window.innerWidth > 600) this.setState({ thumbnails: true });
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions.bind(this));
+    // push to hash
+    if(this.props.location.hash) {
+      // window.location.hash = ''
+      window.location.hash = ""
+      window.location.hash = this.props.location.hash
+    }
   }
   componentWillUnmount() {
    window.removeEventListener("resize", this.updateDimensions.bind(this));
@@ -82,7 +88,15 @@ class App extends Component {
       currentChapter: chapter
     }
   }
-
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // reload hash
+    if(prevProps.match.params.chapter !== this.props.match.params.chapter) {
+      window.location.hash = '#slide1';
+    }
+    if(window.location.hash === ""){
+      window.location.hash = '#slide1';
+    }
+  }
   render() {
     const data = this.state.data['units'];
     return (

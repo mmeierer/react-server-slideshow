@@ -37,7 +37,6 @@ export default class Chapter extends Component {
             alt="gallery button"/>
         </p>
       </a>)
-
   }
   render () {
     return (
