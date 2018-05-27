@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import './boot_short.css';
 // carousels
 import Carousel from '../Carousel/Carousel';
 import Thumbnails from '../Thumbnails/Thumbnails';
 import Lightbox from '../Lightbox/Lightbox';
 import ChaptersList from '../ChaptersList/ChaptersList';
+import CommentBlock from '../CommentBlock/CommentBlock';
 
 const testData = require('./ProjectMap');
 
@@ -32,11 +32,15 @@ class App extends Component {
       gallery       : false,
       currentChapter: 0,
       thumbnails    : false,
-      data          : testData
+      data          : testData,
+      slide         : 0,
+      comments      : []
     }
     this.hideLightbox = this.hideLightbox.bind(this);
     this.showLightbox = this.showLightbox.bind(this);
     this.showGallery = this.showGallery.bind(this);
+    this.requestComments = this.requestComments.bind(this);
+    this.updateComments = this.updateComments.bind(this);
   }
   hideLightbox(){
     this.setState({
@@ -56,6 +60,25 @@ class App extends Component {
       gallery: true,
     })
   }
+  async requestComments(){
+    const url = `${window.location.origin}/api/comments/${this.state.currentChapter}`; // MAKE DYNAMIC WITH STTES
+    try{
+      const response = await fetch(url);
+      const responseJson = await response.json();
+
+
+      this.setState({
+        comments: responseJson
+      })
+    } catch(e){
+      console.log('Comments request failed!');
+    }
+  }
+  updateComments(newComments) {
+    this.setState({
+      comments: newComments
+    })
+  }
 
   updateDimensions() {
     if(window.innerWidth > 600) {
@@ -65,6 +88,9 @@ class App extends Component {
     }
   }
   componentDidMount() {
+    // request commetns
+    this.requestComments();
+
     if(window.innerWidth > 600) this.setState({ thumbnails: true });
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions.bind(this));
@@ -79,19 +105,24 @@ class App extends Component {
    window.removeEventListener("resize", this.updateDimensions.bind(this));
   }
   static getDerivedStateFromProps(props, state) {
+    // set current slide
+    const hash = props.location.hash;
+    const slide = hash ? parseInt(hash.match(/slide(\d+)/)[1])-1 : 0;
     // Check if root
     if(Object.keys(props.match.params).length === 0) return {currentChapter: 0}
     // do nothing if input if > then length of data
     const chapter = parseInt(props.match.params.chapter, 10)
     if(chapter >= state.data.units.length) return state;
     return {
-      currentChapter: chapter
+      currentChapter: chapter,
+      slide: slide
     }
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
-    // reload hash
+    // reload hash and comments
     if(prevProps.match.params.chapter !== this.props.match.params.chapter) {
       window.location.hash = '#slide1';
+      this.requestComments();
     }
     if(window.location.hash === ""){
       window.location.hash = '#slide1';
@@ -207,6 +238,28 @@ class App extends Component {
           </div>
           <div className="col-md-3"></div>
       </div>
+
+
+      {/*COMMENTS*/}
+
+      <div className="row white" style={{paddingBottom: 20}}>
+          {/*LEFT COLUMN*/}
+          <div className="col-md-3"></div>
+          {/*CENTRAL COLUMN*/}
+          <div className="col-md-6">
+
+            <CommentBlock
+              slide={this.state.slide}
+              updateComments={this.updateComments}
+              currentChapter={this.state.currentChapter}
+              slide = {this.state.slide}
+              comments={this.state.comments}/>
+
+          {/*RIGHT COLUMN*/}
+          </div>
+          <div className="col-md-3"></div>
+      </div>
+
     </div>
     );
   }

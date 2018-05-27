@@ -51,11 +51,3 @@ export default class Chapter extends Component {
     )
   }
 }
-
-// {/* Gallery */}
-// <a className="toggle-gallery">
-//   <p  style={{marginTop: 7, marginBottom: 7, paddingRight: 15}}>
-//     Overview
-//     <img height="13" style={{position: 'relative', marginRight: '3%', marginBottom: 5}}/>
-//   </p>
-// </a>
