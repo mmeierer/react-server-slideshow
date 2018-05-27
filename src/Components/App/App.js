@@ -109,7 +109,7 @@ class App extends Component {
     const hash = props.location.hash;
     const slide = hash ? parseInt(hash.match(/slide(\d+)/)[1])-1 : 0;
     // Check if root
-    if(Object.keys(props.match.params).length === 0) return {currentChapter: 0}
+    if(Object.keys(props.match.params).length === 0) return {currentChapter: 0, slide: slide}
     // do nothing if input if > then length of data
     const chapter = parseInt(props.match.params.chapter, 10)
     if(chapter >= state.data.units.length) return state;

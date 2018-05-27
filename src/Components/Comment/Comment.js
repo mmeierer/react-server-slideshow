@@ -32,7 +32,7 @@ export default (props) => {
                 <div className="pull-left meta">
                     <div className="title h5">
                         <h6 className="text-muted time"  style={{fontSize: '10pt'}}>
-                          <b style={{color:'black'}}>{props.comment.author}</b> made a comment on slide <b style={{color:'black'}}># {props.comment.slide}.</b>
+                          <b style={{color:'black'}}>{props.comment.author}</b> made a comment on slide <b style={{color:'black'}}># {props.comment.slide + 1}.</b>
                           &nbsp;&nbsp; {date}
                         </h6>
                     </div>
