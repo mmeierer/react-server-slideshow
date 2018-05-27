@@ -1,10 +1,9 @@
 process.env.NODE_ENV === 'production';
 import express from 'express';
-
+import knex from '../src/DB/knex';
 import serverRenderer from './middleware/renderer';
 import apiRouter from './apiRouter';
 const bodyParser = require('body-parser');
-
 const PORT = process.env.PORT || 3000;
 const path = require('path');
 // initialize the application and create the routes
@@ -41,3 +40,12 @@ app.listen(PORT, (error) => {
 
     console.log("listening on " + PORT + "...");
 });
+
+knex.migrate.latest()
+  .then(()=> {
+    console.log('tables migrated');
+    return knex.seed.run();
+  })
+  .then(() => {
+    console.log('seeded');
+  })

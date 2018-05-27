@@ -35,15 +35,14 @@ router.get('/comments/:chapter', async (req, res) => {
   const comments = await knex('comments')
     .select('*')
     .where('chapter', req.params.chapter)
-  console.log(comments);
+
   res.status(200).send(comments);
 
 });
 
 router.post('/comments', async (req, res) => {
   // DB connection
-  console.log('comment post endpoint was hit');
-  console.log(req.body);
+
   await knex('comments')
     .insert({
       author  : req.body.author,
