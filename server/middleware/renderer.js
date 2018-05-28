@@ -5,6 +5,7 @@ import StaticRouter from 'react-router-dom/StaticRouter';
 import AppRouter from '../../src/Components/AppRouter/AppRouter';
 const path = require("path");
 const fs = require("fs");
+const json = require(`../../src/Components/App/ProjectMap.json`)
 export default (req, res, next) => {
     // point to the html file created by CRA's build tool
     const filePath = path.resolve(__dirname, '..', '..', 'build', 'index.html');
@@ -21,10 +22,20 @@ export default (req, res, next) => {
           </StaticRouter>
         );
         // inject the rendered app into our html and send it
-        htmlData.replace(
+        const title = json.title;
+
+        htmlData = htmlData.replace(
+            /<title><\/title>/,
+            `<title>${title}</title>`
+        )
+
+        htmlData = htmlData.replace(
             '<div id="root"></div>',
             `<div id="root">${html}</div>`
         )
+        console.log(htmlData);
+
+        console.log(htmlData);
         return res.status(200).send(htmlData);
     });
 }

@@ -9,21 +9,6 @@ import CommentBlock from '../CommentBlock/CommentBlock';
 
 const ProjectMap = require('./ProjectMap');
 
-const style = {
-  rowWhite: {
-    paddingTop: 5
-  },
-  rowBlue: {
-    background: 'blue', // must be DYNAMIC
-    paddinBottom: 0,
-    paddingTop: 20
-  },
-  title : {
-    margin: 0,
-    paddingTop: 25
-  }
-}
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -136,7 +121,25 @@ class App extends Component {
       window.location.hash = '#slide1';
     }
   }
+  setBackground(){
+    const style = {
+      rowWhite: {
+        paddingTop: 5
+      },
+      rowBlue: {
+        paddinBottom: 0,
+        paddingTop: 20
+      },
+      title : {
+        margin: 0,
+        paddingTop: 25
+      }
+    }
+    style.rowBlue.background = this.state.data.color || 'blue';
+    return style;
+  }
   render() {
+    const style = this.setBackground()
     const data = this.state.data['units'];
     return (
 
@@ -155,10 +158,10 @@ class App extends Component {
             <div className="col-md-12">
               { /* Lecture title */ }
                 <div className="pull-left" style={{paddingLeft:20}}>
-                    <p style={style.title}><mark>#TITLE</mark></p>
+                    <p style={style.title}><mark>#{this.state.data.title}</mark></p>
                 </div>
                 <div className="container">
-                  <div className="logo pull-right">
+                  <div className="logo pull-right" style={{padding: 5}}>
                     {this.state.data.logo
                       ? <img src={this.state.data.logo} alt="logo"/>
                       : `&nbsp;`}
