@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // router.use('/*', serverRenderer);
 // other static resources should just be served as they are
-router.use(express.static(
+router.use('/static', express.static(
     path.resolve(__dirname, '..', 'build')
 ));
 router.use(express.static(
