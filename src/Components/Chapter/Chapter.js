@@ -41,7 +41,9 @@ export default class Chapter extends Component {
   render () {
     return (
       <div>
-        <Link to={`/${this.props.linkTo}`} className="chapter" id="chapter-link">
+        <Link to={`/${this.props.linkTo}`}
+          className={this.props.isCurrent ? "chapter current" : "chapter"} 
+          id="chapter-link">
           <h3 style={{display: 'inline'}}>{this.props.unit.title}</h3>
         </Link>
         {this.showGalleryButton()}

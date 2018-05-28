@@ -43,9 +43,9 @@ app.listen(PORT, (error) => {
 
 knex.migrate.latest()
   .then(()=> {
-    console.log('tables migrated');
-    return knex.seed.run();
+    console.log('Tables migrated');
+    return;
   })
   .then(() => {
-    console.log('seeded');
+    console.log('Server is ready!');
   })

@@ -7,7 +7,7 @@ import Lightbox from '../Lightbox/Lightbox';
 import ChaptersList from '../ChaptersList/ChaptersList';
 import CommentBlock from '../CommentBlock/CommentBlock';
 
-const testData = require('./ProjectMap');
+const ProjectMap = require('./ProjectMap');
 
 const style = {
   rowWhite: {
@@ -32,7 +32,7 @@ class App extends Component {
       gallery       : false,
       currentChapter: 0,
       isDesktop    : false,
-      data          : testData,
+      data          : ProjectMap,
       slide         : 0,
       comments      : []
     }
@@ -150,7 +150,9 @@ class App extends Component {
                 </div>
                 <div className="container">
                   <div className="logo pull-right">
-                    &nbsp;
+                    {this.state.data.logo
+                      ? <img src={this.state.data.logo} alt="logo"/>
+                      : `&nbsp;`}
                   </div>
                 </div>
             </div>
@@ -268,9 +270,3 @@ class App extends Component {
 }
 
 export default App;
-// <% } else { %>
-// <!-- empty element of the same size -->
-// <div className="container">
-// <div className="logo pull-right">
-//   &nbsp;
-// </div>}

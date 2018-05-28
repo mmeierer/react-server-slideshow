@@ -1,34 +1,7 @@
 import express from 'express';
-// initialize the application and create the routes
+const csv = require('express-csv');
 const router = express.Router();
 const knex = require('../src/DB/knex');
-
-// const comments = [
-//   {
-//     author: 'Test1',
-//     text: 'Test comment',
-//     date: Date.now(),
-//     tag: 'general feedback',
-//     slide: 1,
-//     chapter: 0
-//   },
-//   {
-//     author: 'Test2',
-//     text: 'Test comment',
-//     date: Date.now(),
-//     tag: 'mistake',
-//     slide: 2,
-//     chapter: 0
-//   },
-//   {
-//     author: 'Test3',
-//     text: 'Test comment',
-//     date: Date.now(),
-//     tag: 'improvement',
-//     slide: 3,
-//     chapter: 0
-//   }
-// ]
 
 router.get('/comments/:chapter', async (req, res) => {
   // DB connection
@@ -57,5 +30,23 @@ router.post('/comments', async (req, res) => {
   res.status(201).send(comments);
 
 });
+
+router.get('/report', async (req, res) => {
+  const columns = {
+    id : 'id',
+    author: 'author',
+    slide : 'slide',
+    chapter :'chapter',
+    text: 'text',
+    tag: 'tag',
+    date: 'date'
+  }
+  const data = await knex('comments')
+    .select('*')
+  data.unshift(columns)
+  res.setHeader('Content-disposition', 'attachment; filename=report.csv');
+  res.set('Content-Type', 'text/csv');
+  res.status(200).csv(data).send();
+})
 
 module.exports = router;
