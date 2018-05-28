@@ -34,9 +34,9 @@ router.post('/comments', async (req, res) => {
 router.get('/report', async (req, res) => {
   const columns = {
     id : 'id',
-    author: 'author',
     slide : 'slide',
     chapter :'chapter',
+    author: 'author',
     text: 'text',
     tag: 'tag',
     date: 'date'
