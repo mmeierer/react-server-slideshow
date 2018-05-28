@@ -44,6 +44,11 @@ export default class Carousel extends Component {
       )
     })
   }
+  componentWillUpdate(){
+    // hide owl controlls if not desktop
+    options.nav = true
+    if(!this.props.isDesktop) options.nav = false
+  }
   render(){
     return (
       <OwlCarousel id="carousel-b" ref="car" options={options} >

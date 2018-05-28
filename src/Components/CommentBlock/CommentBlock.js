@@ -16,7 +16,9 @@ export default class CommentBlock extends Component{
           updateComments={this.props.updateComments}
           currentChapter={this.props.currentChapter}
           slide = {this.props.slide}/>
-        <CommentsList comments={comments}/>
+        <CommentsList comments={comments}
+          slide = {this.props.slide}
+          currentChapter={this.props.currentChapter}/>
       </div>
     )
   }

@@ -16,6 +16,7 @@ export default class Chapters extends Component {
                return <Chapter
                   isCurrent={isCurrent}
                   showGallery={this.props.showGallery}
+                  isDesktop={this.props.isDesktop}
                   unit = {unit}
                   linkTo = {index}
                   key = {index}/>

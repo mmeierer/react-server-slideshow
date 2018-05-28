@@ -31,7 +31,7 @@ class App extends Component {
       lightbox      : false,
       gallery       : false,
       currentChapter: 0,
-      thumbnails    : false,
+      isDesktop    : false,
       data          : testData,
       slide         : 0,
       comments      : []
@@ -82,9 +82,9 @@ class App extends Component {
 
   updateDimensions() {
     if(window.innerWidth > 600) {
-      this.setState({ thumbnails: true });
+      this.setState({ isDesktop: true });
     } else {
-      this.setState({ thumbnails: false });
+      this.setState({ isDesktop: false });
     }
   }
   componentDidMount() {
@@ -166,6 +166,7 @@ class App extends Component {
                 <ChaptersList
                   showGallery={this.showGallery}
                   currentChapter={this.state.currentChapter}
+                  isDesktop = {this.state.isDesktop}
                   data = {data}/>
 
               </div>
@@ -182,7 +183,8 @@ class App extends Component {
                 <Carousel
                   showLightbox = {this.showLightbox}
                   currentChapter={this.state.currentChapter}
-                  data = {data}/>
+                  data = {data}
+                  isDesktop = {this.state.isDesktop}/>
 
           </div>
           {/*right COLUMN*/}
@@ -199,7 +201,7 @@ class App extends Component {
 
               {/*THUMBNAILS*/}
               <Thumbnails
-                thumbnails={this.state.thumbnails}
+                thumbnails={this.state.isDesktop}
                 currentChapter={this.state.currentChapter}
                 data = {data}/>
 

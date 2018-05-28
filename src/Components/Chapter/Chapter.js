@@ -7,7 +7,7 @@ export default class Chapter extends Component {
     this.clickHandler = this.clickHandler.bind(this);
   }
   clickHandler(){
-    this.props.showGallery()
+    if(this.props.isDesktop) this.props.showGallery()
   }
 
   showSubchapters(){
@@ -27,7 +27,7 @@ export default class Chapter extends Component {
     }
   }
   showGalleryButton() {
-    if(!this.props.isCurrent) return;
+    if(!this.props.isCurrent || !this.props.isDesktop) return;
     return (
       <a className="toggle-gallery" onClick={this.clickHandler} style={{cursor: 'pointer'}}>
         <p  style={{marginTop: 7, marginBottom: 7, paddingRight: 15}}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentForm from '../CommentForm/CommentForm';
+
 const tags = {
   'general feedback'  : "badge badge-pill badge-primary",
   'mistake'           : "badge badge-pill badge-danger",
