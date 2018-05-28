@@ -51,7 +51,8 @@ export default class Carousel extends Component {
   }
   render(){
     return (
-      <OwlCarousel id="carousel-b" ref="car" options={options} >
+      <OwlCarousel id="carousel-b"
+        ref="car" options={options}>
         {this.mapItems()}
       </OwlCarousel>
     )

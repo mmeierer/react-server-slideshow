@@ -34,7 +34,8 @@ export default class Lightbox extends Component {
             <div className="col-lg-8">
               <Carousel
               currentChapter={this.props.currentChapter}
-              data = {this.props.data}/>
+              data = {this.props.data}
+              slide = {this.props.slide}/>
             </div>
             <div className="col-lg-2"></div>
           </div>

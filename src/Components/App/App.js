@@ -94,6 +94,7 @@ class App extends Component {
     if(window.innerWidth > 600) this.setState({ thumbnails: true });
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions.bind(this));
+
     // push to hash
     if(this.props.location.hash) {
       // window.location.hash = ''
@@ -106,8 +107,15 @@ class App extends Component {
   }
   static getDerivedStateFromProps(props, state) {
     // set current slide
+
     const hash = props.location.hash;
-    const slide = hash ? parseInt(hash.match(/slide(\d+)/)[1])-1 : 0;
+    let slide = state.slide;
+    try {
+      slide = hash ? parseInt(hash.match(/slide(\d+)/)[1], 10)-1 : 0;
+    } catch (e) {
+
+    }
+
     // Check if root
     if(Object.keys(props.match.params).length === 0) return {currentChapter: 0, slide: slide}
     // do nothing if input if > then length of data
@@ -139,7 +147,8 @@ class App extends Component {
           gallery   = {this.state.gallery}
           hideLightbox = {this.hideLightbox}
           currentChapter={this.state.currentChapter}
-          data = {data} />
+          data = {data}
+          slide = {this.state.slide} />
 
         <div className="row white" style={style.rowWhite}>
             { /* LEFT COLUMN */ }
@@ -186,7 +195,8 @@ class App extends Component {
                   showLightbox = {this.showLightbox}
                   currentChapter={this.state.currentChapter}
                   data = {data}
-                  isDesktop = {this.state.isDesktop}/>
+                  isDesktop = {this.state.isDesktop}
+                  slide = {this.state.slide}/>
 
           </div>
           {/*right COLUMN*/}
@@ -256,7 +266,6 @@ class App extends Component {
               slide={this.state.slide}
               updateComments={this.updateComments}
               currentChapter={this.state.currentChapter}
-              slide = {this.state.slide}
               comments={this.state.comments}/>
 
           {/*RIGHT COLUMN*/}

@@ -8,7 +8,7 @@ export default class CommentBlock extends Component{
 
   render() {
     const comments = this.props.comments.filter((comment) => {
-      if(comment.slide === this.props.slide) return comment
+      if(comment.slide === this.props.slide) return comment;
     });
     return (
       <div>

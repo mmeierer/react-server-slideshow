@@ -18,7 +18,7 @@ export default class Gallery extends Component {
           </div>
           {
             unit.subchaptersSlides[index].map((slide) => {
-              const urlHash = `#slide${slide.match(/Slide(\d+)/)[1]}`;
+              const urlHash = `#slide${slide.match(/.*\/(\d+)./)[1]}`;
               return (
                 <div className="col-lg-3 col-md-4 col-xs-6 thumb" key={urlHash}>
                     <a className="thumbnail" href={urlHash} onClick={this.handleImageClick}>
