@@ -25,7 +25,7 @@ To use it yourself you need to do the following:
 
 1. **Setup the necessary infrastructure:**
 
-  Install [Git]((https://git-scm.com/download/win) **(for Windows users only)**
+  Install [Git](https://git-scm.com/download/win) **(for Windows users only)**
   <br> Get a [Heroku account](https://www.heroku.com/home):
     - Create an  account
     - Create a new app
