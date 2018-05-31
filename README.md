@@ -32,7 +32,7 @@ To use it yourself you need to do the following:
     - Choose 'Heroku Postgres' in the Add-on list
     - Set ```ALLOW_COMMENTS``` config variable to ```true``` or ```false``` on the settings tab
 
-    <br>
+  <br>
 2. **Prepare your slide deck:**
 <br>Convert presentation slides, define folder structure, define menu structure and appearance
 
