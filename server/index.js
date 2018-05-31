@@ -40,12 +40,3 @@ app.listen(PORT, (error) => {
 
     console.log("listening on " + PORT + "...");
 });
-
-knex.migrate.latest()
-  .then(()=> {
-    console.log('Tables migrated');
-    return;
-  })
-  .then(() => {
-    console.log('Server is ready!');
-  })
