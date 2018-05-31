@@ -40,11 +40,15 @@ app.listen(PORT, (error) => {
 
     console.log("listening on " + PORT + "...");
 });
-
-knex.schema.hasTable('comments').then(function(exists) {
-  if (!exists) {
-    migrate();
-  } else {
-    console.log('Migration is not needed!');
-  }
-});
+try{
+  knex.schema.hasTable('comments').then(function(exists) {
+    if (!exists) {
+      migrate();
+    } else {
+      console.log('Migration is not needed!');
+    }
+  });
+} catch(e) {
+  console.log(e);
+  console.log(process.env.DATABASE_URL);
+}
