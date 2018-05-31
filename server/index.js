@@ -1,4 +1,4 @@
-process.env.NODE_ENV === 'production';
+import migrate from '../src/DB/makeMigrations'
 import express from 'express';
 import knex from '../src/DB/knex';
 import serverRenderer from './middleware/renderer';
@@ -39,4 +39,12 @@ app.listen(PORT, (error) => {
     }
 
     console.log("listening on " + PORT + "...");
+});
+
+knex.schema.hasTable('comments').then(function(exists) {
+  if (!exists) {
+    migrate();
+  } else {
+    console.log('Migration is not needed!');
+  }
 });
