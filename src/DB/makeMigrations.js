@@ -10,6 +10,7 @@ const migrate = () => {
         return knex.destroy();
     })
     .catch((e)=> {
+      console.log(knex);
       console.log('Migration failed:');
       console.log(e);
     })
