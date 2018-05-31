@@ -36,20 +36,20 @@ To use it yourself you need to do the following:
 2. **Prepare your slide deck**:
 <br>Convert presentation slides, define folder structure, define menu structure and appearance
 
-    - *Create content:*
-<br>Export presentation files as JPEG or PNG files. Files will be in the ascending order based on the digits in their names.
+  - *Create content:*
+  <br>Export presentation files as JPEG or PNG files. Files will be in the ascending order based on the digits in their names.
 
-   - *Define order of presentation files:*
-<br> Copy the image files to a folder. A folder defines a chapter, i.e. top-level entry. Folders will be sorted in the ascending order based on the digits in their names. Use naming to create desired order of your chapters. Move them to the ```PROJECT_CONTENT``` folder.
+  - *Define order of presentation files:*
+  <br> Copy the image files to a folder. A folder defines a chapter, i.e. top-level entry. Folders will be sorted in the ascending order based on the digits in their names. Use naming to create desired order of your chapters. Move them to the ```PROJECT_CONTENT``` folder.
   - *Set up chapter and subchapter names in details.json:*
-<br>In the ```main.json``` specify a title, contributors and a background colour.
+  <br>In the ```main.json``` specify a title, contributors and a background colour.
   - *Set up chapter and subchapter names in details.json:*
-<br>Name the chapters and create/name subcapters, i.e. a second-level menu structure. Create ```details.json``` files with details on the presentations in every folder.
+  <br>Name the chapters and create/name subcapters, i.e. a second-level menu structure. Create ```details.json``` files with details on the presentations in every folder.
   - *Place a logo (if any):*
   <br>Place a logo in the ```PROJECT_CONTENT``` folder. Name it 'logo'. File extension is not important.
 
   <br>
-4. **Publish:**
+3. **Publish:**
 <br>Push entire project to your heroku repository.
 
 <br>
@@ -79,8 +79,7 @@ To use it yourself you need to do the following:
     - Click "Clone or Download" button and choose "Download ZIP"
 
     <br>
-
-3. **Prepare your slide deck**: <br>Convert presentation slides, define folder structure, define menu structure and appearance
+2. **Prepare your slide deck**: <br>Convert presentation slides, define folder structure, define menu structure and appearance
 
     - *Create content:*
 <br>Export presentation files as JPEG or PNG files. File will be sorted in the ascending order based on the digits in their names. I suggest using names like ```'slide01', 'img1', '1pic' ``` or similar.
@@ -119,7 +118,7 @@ To use it yourself you need to do the following:
 
   <br>![](./readme_images/4.png)
 
-4. **Publish:**
+3. **Publish:**
 <br>Push files to your Heroku repository. Make sure that the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) is installed on your computer.
     - Open command line and navigate to your project root (entire project, but not the ```PROJECT_CONTENT``` folder):
     ```
