@@ -9,12 +9,12 @@ const db = new sqlite3.Database(`${__dirname}/localDB.db`, (err) => {
   console.log('Connected to the localDB.');
 });
 
-knex.migrate.latest()
-  .then(()=> {
-    console.log('Tables migrated');
-    return;
-  })
-  .then(() => {
-    console.log('Server is ready!');
-    db.close()
-  })
+knex.migrate.latest();
+  // .then(()=> {
+  //   console.log('Tables migrated');
+  //   return;
+  // })
+  // .then(() => {
+  //   console.log('Server is ready!');
+  //   db.close()
+  // })
