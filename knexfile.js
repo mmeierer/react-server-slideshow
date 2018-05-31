@@ -4,7 +4,11 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgresql://localhost:5432',
+    connection: {
+      database: process.env.DB_NAME,
+      user:     process.env.DB_USER,
+      password: ''
+    },
     migrations: {
      directory: `${__dirname}/src/DB/migrations`
     },
