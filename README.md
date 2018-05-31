@@ -49,7 +49,6 @@ To use it yourself you need to do the following:
   <br>Place a logo in the ```PROJECT_CONTENT``` folder. Name it 'logo'. File extension is not important.
 
   <br>
-
 3. **Publish:**
 <br>Push entire project to your heroku repository.
 
