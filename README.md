@@ -32,7 +32,6 @@ To use it yourself you need to do the following:
     - Choose 'Heroku Postgres' in the Add-on list
     - Set ```ALLOW_COMMENTS``` config variable to ```true``` or ```false``` on the settings tab.
 
-    <br>
 2. **Prepare your slide deck:**
 
   <br>Convert presentation slides, define folder structure, define menu structure and appearance
@@ -49,7 +48,6 @@ To use it yourself you need to do the following:
   - *Place a logo (if any):*
   <br>Place a logo in the ```PROJECT_CONTENT``` folder. Name it 'logo'. File extension is not important.
 
-  <br>
 3. **Publish:**
 
   Push entire project to your heroku repository.
