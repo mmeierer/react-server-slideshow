@@ -16,7 +16,8 @@ knex.migrate.latest()
   })
   .then(() => {
     console.log('Server is ready!');
-    db.close()
+    db.close();
+    process.exit();
     return;
   })
   .catch(function(error) {
