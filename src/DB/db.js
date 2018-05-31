@@ -21,4 +21,4 @@ knex.migrate.latest()
   })
   .catch(function(error) {
     console.error(error);
-  }
+  })
