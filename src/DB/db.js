@@ -10,11 +10,15 @@ const db = new sqlite3.Database(`${__dirname}/localDB.db`, (err) => {
 });
 
 knex.migrate.latest();
-  // .then(()=> {
-  //   console.log('Tables migrated');
-  //   return;
-  // })
-  // .then(() => {
-  //   console.log('Server is ready!');
-  //   db.close()
-  // })
+  .then(()=> {
+    console.log('Tables migrated');
+    return;
+  })
+  .then(() => {
+    console.log('Server is ready!');
+    db.close()
+    return;
+  })
+  .catch(function(error) {
+    console.error(error);
+  }
