@@ -1,7 +1,7 @@
 {
   "name": "server-react-slideshow",
   "version": "1.0.0",
-  "main" : "bootstrap.js",
+  "main": "bootstrap.js",
   "author": "Gleb Irovich",
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
@@ -11,12 +11,12 @@
     "express-csv": "^0.6.0",
     "ignore-styles": "^5.0.1",
     "knex": "^0.14.6",
+    "pg": "^7.4.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-owl-carousel2": "^0.3.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "sqlite3": "^4.0.0"
+    "react-scripts": "1.1.4"
   },
   "keywords": [
     "node",
@@ -30,8 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "NODE_ENV=production nodemon server/bootstrap.js",
-    "postinstall": "node ./src/collector.js && node ./src/DB/db.js && node ./src/DB/makeMigrations.js && npm run build"
+    "server": "NODE_ENV=development nodemon server/bootstrap.js",
+    "postinstall": "node ./src/collector.js && node ./src/DB/makeMigrations.js && npm run build"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"

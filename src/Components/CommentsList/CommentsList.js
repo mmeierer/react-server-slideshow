@@ -12,7 +12,7 @@ export default class CommentsList extends Component{
   renderLoadMoreLink(){
     if(this.state.comDisplayed >= this.props.comments.length) return;
     return (
-      <a style={{textAlign: 'center', display: 'block'}}
+      <a style={{textAlign: 'center', display: 'block', cursor:'pointer'}}
         onClick={this.loadMore}> Load more </a>
     )
   }

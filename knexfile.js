@@ -3,30 +3,25 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
-    connection: {
-      filename: `${__dirname}/src/DB/localDB.db`
-    },
+    client: 'pg',
+    connection: 'postgresql://localhost:5432',
     migrations: {
      directory: `${__dirname}/src/DB/migrations`
     },
     seeds: {
       directory: `${__dirname}/src/DB/seeds`
-    },
-    useNullAsDefault: true
+    }
   },
 
   production: {
-    client: 'sqlite3',
-    connection: {
-      filename: `${__dirname}/src/DB/localDB.db`
-    },
+    client: 'pg',
+    ssl: true,
+    connection: process.env.DATABASE_URL + '?ssl=true',
     migrations: {
      directory: `${__dirname}/src/DB/migrations`
     },
     seeds: {
       directory: `${__dirname}/src/DB/seeds`
-    },
-    useNullAsDefault: true
+    }
   }
 };
