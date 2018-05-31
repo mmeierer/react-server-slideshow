@@ -25,16 +25,17 @@ To use it yourself you need to do the following:
 
 1. **Setup the necessary infrastructure:**
 
-  <br> Install [Git]((https://git-scm.com/download/win) **(for Windows users only)**
+  Install [Git]((https://git-scm.com/download/win) **(for Windows users only)**
   <br> Get a [Heroku account](https://www.heroku.com/home):
     - Create an  account
     - Create a new app
     - Choose 'Heroku Postgres' in the Add-on list
-    - Set ```ALLOW_COMMENTS``` config variable to ```true``` or ```false``` on the settings tab
+    - Set ```ALLOW_COMMENTS``` config variable to ```true``` or ```false``` on the settings tab.
 
-  <br>
+    <br>
 2. **Prepare your slide deck:**
-<br>Convert presentation slides, define folder structure, define menu structure and appearance
+
+  <br>Convert presentation slides, define folder structure, define menu structure and appearance
 
   - *Create content:*
   <br>Export presentation files as JPEG or PNG files. Files will be in the ascending order based on the digits in their names.
@@ -50,7 +51,8 @@ To use it yourself you need to do the following:
 
   <br>
 3. **Publish:**
-<br>Push entire project to your heroku repository.
+
+  Push entire project to your heroku repository.
 
 <br>
 
