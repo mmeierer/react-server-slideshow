@@ -18,7 +18,7 @@ export default (req, res, next) => {
         const context = {};
         const html = ReactDOMServer.renderToString(
           <StaticRouter location={req.url} context={context}>
-            <AppRouter />
+            <AppRouter/>
           </StaticRouter>
         );
         // inject the rendered app into our html and send it
@@ -42,6 +42,13 @@ export default (req, res, next) => {
         htmlData = htmlData.replace(
             '/static/css/main',
             '/static/static/css/main'
+        )
+
+        // check COMMENTS
+        const allowComments = process.env.ALLOW_COMMENTS || false;
+        htmlData = htmlData.replace(
+            '<script id="ININTIAL_STATE" type="text/javascript"></script>',
+            `<script type="text/javascript">window.ALLOW_COMMENTS=${allowComments}</script>`
         )
 
         return res.status(200).send(htmlData);

@@ -19,7 +19,8 @@ class App extends Component {
       isDesktop    : false,
       data          : ProjectMap,
       slide         : 0,
-      comments      : []
+      comments      : [],
+      allowComments : false
     }
     this.hideLightbox = this.hideLightbox.bind(this);
     this.showLightbox = this.showLightbox.bind(this);
@@ -32,6 +33,17 @@ class App extends Component {
       lightbox: false,
       gallery: false
     })
+  }
+  showComments(){
+    if(!this.state.allowComments) return;
+    return (
+      <CommentBlock
+        slide={this.state.slide}
+        updateComments={this.updateComments}
+        currentChapter={this.state.currentChapter}
+        comments={this.state.comments}/>
+    )
+    
   }
   showLightbox(){
     this.setState({
@@ -86,6 +98,10 @@ class App extends Component {
       window.location.hash = ""
       window.location.hash = this.props.location.hash
     }
+    // set comments
+    this.setState({
+      allowComments: window.ALLOW_COMMENTS
+    })
   }
   componentWillUnmount() {
    window.removeEventListener("resize", this.updateDimensions.bind(this));
@@ -265,11 +281,7 @@ class App extends Component {
           {/*CENTRAL COLUMN*/}
           <div className="col-md-6">
 
-            <CommentBlock
-              slide={this.state.slide}
-              updateComments={this.updateComments}
-              currentChapter={this.state.currentChapter}
-              comments={this.state.comments}/>
+            {this.showComments()}
 
           {/*RIGHT COLUMN*/}
           </div>

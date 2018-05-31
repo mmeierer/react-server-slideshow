@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import App from '../App/App';
 
-const AppRouter = () => (
+const AppRouter = (props) => (
 
     <Switch>
       <Route path='/:chapter' component={App}/>
