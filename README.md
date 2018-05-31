@@ -33,7 +33,7 @@ To use it yourself you need to do the following:
     - Set ```ALLOW_COMMENTS``` config variable to ```true``` or ```false``` on the settings tab
 
     <br>
-2. **Prepare your slide deck**:
+2. **Prepare your slide deck:**
 <br>Convert presentation slides, define folder structure, define menu structure and appearance
 
   - *Create content:*
@@ -49,6 +49,7 @@ To use it yourself you need to do the following:
   <br>Place a logo in the ```PROJECT_CONTENT``` folder. Name it 'logo'. File extension is not important.
 
   <br>
+
 3. **Publish:**
 <br>Push entire project to your heroku repository.
 
