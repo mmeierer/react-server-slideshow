@@ -136,7 +136,7 @@ To use it yourself you need to do the following:
     ```
     git commit -m "I am ready to publish"
     ```
-    - Connect to your remote repository on heroku (you can find the link on the application, 'Deploy' tab):
+    - Connect to your remote repository on heroku (you can find the link on the application page, 'Deploy' tab):
     ```
     heroku git:remote -a name-of-your-app
     ```
@@ -145,5 +145,7 @@ To use it yourself you need to do the following:
     git push heroku master
     ```
 4. **Disable/Enable Comments:**
+<br>If you want to disable/enable commenting on your page, simply navigate to your app's settings tab and switch ```ALLOW_COMMENTS``` config variable to ```false``` / ```true``` respectively.
 
-If you want to disable/enable commenting on your page, simply navigate to your app's settings tap and switch ```ALLOW_COMMENTS``` config variable to ```false``` / ```true``` respectively.
+5. **Generating Reports:**
+<br>You webpage has an out-of-the-box reporting functionality. You can generate a report about commenting activity simply by hitting the  ```https://YOUR-APP-NAME.herokuapp.com/api/report``` endpoint. 
