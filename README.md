@@ -14,8 +14,8 @@ Publishing a webpage with your lecture slides in 10min
 
 This software builds up on [Express JS](http://expressjs.com/), a popular framework for Node JS, and [React JS](https://reactjs.org/), a JS library for building user interfaces. Further, it is deployed to [Heroku](https://www.heroku.com/home), where the content of the lecture is built into the fully functional web page.
 
-Have a look at the example:
-- https://test-uzh.herokuapp.com/
+Have a look at the example: https://test-uzh.herokuapp.com/
+
 <br>
 
 
